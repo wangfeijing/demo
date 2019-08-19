@@ -1,0 +1,58 @@
+<!--
+ * @Description: 测试文件
+ * @Author: jing
+ * @Date: 2019-07-23 10:40:10
+ * @LastEditors: jing
+ * @LastEditTime: 2019-08-09 10:51:24
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .p{
+      /* height: 30px;
+      line-height: 30px; */
+      color: red;
+      /* mask-size: cover; */
+    }
+    .svg{
+      /* width:20px;
+      height:20px; */
+      fill:currentColor;
+      fill-opacity:0.6;
+      vertical-align:middle;
+    }
+    img{
+      mask-image: url(#el-icon-dengluyonghuming);
+      mask-size: cover;
+    }
+  </style>
+</head>
+<script src="./font_svg.js"></script>
+<body>
+  <p class="p" />
+      <svg class="svg">
+          <use xlink:href="#el-icon-dengluyonghuming"></use>
+      </svg>
+      <img src="./ps1.jpg" alt="" >
+      <!-- <span>用户</span> -->
+  <!-- </p> -->
+  
+</body>
+<script>
+// 同步，是所有的操作都做完，才返回给用户结果。即写完数据库之后，在相应用户，用户体验不好。
+
+// 异步，不用等所有操作等做完，就相应用户请求。即先相应用户请求，然后慢慢去写数据库，用户体验较好。
+async function f(){
+  console.log(11111111)
+  
+  // return 'async方法会等待这个方法所有的操作都完成才会返回then';
+  return await 1
+};
+f().then(res=>console.log(res)).catch(e=>console.log(e))
+</script>
+</html>
